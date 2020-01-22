@@ -14,8 +14,9 @@ class BeerDetail extends React.Component{
 
   async componentDidMount() {
     try {
-      const beer = await BeerService.detail(this.props.params.id)
-      console.log(this.props.params.id)
+      const beerId = this.props.match.params.id
+      const beer = await BeerService.detail(beerId)
+      console.log(beerId)
       this.setState({beer: beer} )
     } catch(error) {
       console.warn('Error receiving beers list => ', error)
