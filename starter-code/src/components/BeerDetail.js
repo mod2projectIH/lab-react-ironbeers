@@ -2,6 +2,7 @@ import React from "react"
 import BeerService from "../services/BeerService";
 import Header from "./Header";
 import BeerItem from "./BeerItem";
+import BeerItemExtra from "./BeerItemExtra";
 
 
 class BeerDetail extends React.Component{
@@ -16,7 +17,6 @@ class BeerDetail extends React.Component{
     try {
       const beerId = this.props.match.params.id
       const beer = await BeerService.detail(beerId)
-      console.log(beerId)
       this.setState({beer: beer} )
     } catch(error) {
       console.warn('Error receiving beers list => ', error)
@@ -39,8 +39,9 @@ class BeerDetail extends React.Component{
 						tag={this.state.beer.tagline}
 						contributed={this.state.beer.contributed_by}
 					/>
-          
-			
+          <BeerItemExtra
+            {...this.state.beer}
+          />		
 			</div>
 		);
 	}
