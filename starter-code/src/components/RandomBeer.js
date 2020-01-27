@@ -2,7 +2,6 @@ import React from "react"
 import BeerService from "../services/BeerService";
 import BeerItem from "./BeerItem";
 import BeerItemExtra from "./BeerItemExtra";
-import Header from "./Header";
 
 
 class RandomBeer extends React.Component{
@@ -29,7 +28,6 @@ class RandomBeer extends React.Component{
   
           return (
               <div>
-          <Header />
               
             <BeerItem
                 key={this.state.beer._id}

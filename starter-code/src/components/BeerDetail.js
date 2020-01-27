@@ -1,6 +1,5 @@
 import React from "react"
 import BeerService from "../services/BeerService";
-import Header from "./Header";
 import BeerItem from "./BeerItem";
 import BeerItemExtra from "./BeerItemExtra";
 
@@ -30,7 +29,6 @@ class BeerDetail extends React.Component{
 
 		return (
 			<div>
-        <Header />
 			
 					<BeerItem
 						key={this.state.beer._id}

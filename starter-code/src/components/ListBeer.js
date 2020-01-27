@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BeerService from "../services/BeerService";
 import BeerItem from "./BeerItem";
-import Header from "./Header";
 
 class ListBeer extends Component {
 	constructor(props) {
@@ -26,7 +25,6 @@ class ListBeer extends Component {
 	render() {
 		return (
 			<div>
-				<Header />
 				{this.state.beers.map((beer, i) => (
 					<BeerItem
             key={i}
